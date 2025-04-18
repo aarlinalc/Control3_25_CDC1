@@ -7,15 +7,20 @@
  */
 
 plugins {
-    // Apply the java-library plugin for API and implementation separation.
+ // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
+ //Añado el plugin para eclipse
+    id 'eclipse'
 }
 
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
-
+tasks.withType(JavaCompile) {  
+    options.deprecation = true  
+    options.encoding = 'UTF-8'
+}
 dependencies {
 
    //Nuestra biblioteca usa la API JPA para persistencia
@@ -34,14 +39,8 @@ dependencies {
     // Usamos la API JUnit Jupiter para las pruebas de cÃ³digo
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
-
 	testImplementation 'org.junit.platform:junit-platform-engine:1.9.3'
 
-    //Añado para usar mockito
-
-    testImplementation "org.mockito:mockito-core:2.+" 
-    testImplementation "org.mockito:mockito-junit-jupiter:2.+"
-	
 	//Las siguientes dos dependencias las introduce gradle automÃ¡ticamente
 
     // This dependency is exported to consumers, that is to say found on their compile classpath.
