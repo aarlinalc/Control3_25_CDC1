@@ -33,7 +33,7 @@ public class GestorInmobiliaria {
 		
 	}
     private void printData() {
-    	System.out.println("Viviendas en la inmobiliaria:");
+    	System.out.println("Viviendas en la inmobiliaria de aarlinalc:");
 		// Mostrar todas las viviendas en la inmobiliaria
 		System.out.println(inmobiliaria.findAll());
     	

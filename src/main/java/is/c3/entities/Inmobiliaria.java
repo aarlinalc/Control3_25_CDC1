@@ -54,7 +54,9 @@ public class Inmobiliaria implements GestionStock<Vivienda> {
 	}
 
 	@Override
-	public Vivienda findById(int key) {
+	public Vivienda findById(int key)
+	{
+	
 		return viviendas.get(key); // Buscamos la vivienda por su clave (ID)
 	}
 
